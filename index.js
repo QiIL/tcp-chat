@@ -27,7 +27,7 @@ var server = net.createServer(function (conn) {
     delete users[nickname];
     boardcast('\033[90m > ' + nickname + '  left the room:\033[39m\n')
   });
-  //设置一个广播函数
+  //设置一个广播函数,向除了自己之外的所有人推送消息
   function boardcast (msg, exceptMyself){
     for (var i in users){
       if (i != nickname){
